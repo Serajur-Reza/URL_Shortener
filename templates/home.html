@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="text-center col-sm-12">
+            <h1 class="cover-heading">{{ title }}</h1>
+                <p>Shorten the URL</p>
+
+                <br>
+
+            <div>
+            <form method="POST", action=".">{% csrf_token %}
+                {{ form.as_p }}
+
+                <input class="btn btn-primary" type="submit" value="Shorten URL">
+            </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock content%}
